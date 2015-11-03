@@ -1,0 +1,843 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+Theme Name: Damn Right - A Personal Creative Site
+Author: Blake Schwartz for Web 170, Spring 2015
+Author URI: http://blakehschwartz.com/
+Description: This is my theme for the WEB170 WordPress class.
+Version: 1.0
+*/
+
+/* RESETS */
+
+body, body * {
+	margin:0;
+	padding:0;
+	box-sizing: border-box;	/* declared width = rendered width */	
+}
+
+a image {
+	border:0;
+}
+
+/* END RESETS */
+
+/* RESPONSIVE */
+
+/* will not validate --------- */
+html { 
+	/* don't resize body copy on iPhone */
+	-webkit-text-size-adjust: none;  
+}
+
+@-ms-viewport,		/* IE10; DOES NOT VALIDATE */
+@viewport	{		/* future browsers */
+    width: extend-to-zoom;
+    zoom: 1.0;
+}
+/* --------- end will not validate */
+/* /RESPONSIVE */
+
+/*COLOR CODES*/
+
+	/*#000000				black*/
+	
+	/*#D10003				dark red*/
+	
+	/*#FFFFFF				white*/
+	
+	/*#828282				gray*/
+
+/* FOR DEVO ONLY */
+
+/*body {
+	background-image:url(images/860-9-grid.jpg);
+	background-position:50%;
+	background-repeat:repeat-y;
+}*/
+
+div, header, aside, footer, nav {
+	/*border:1px solid red;*/
+}
+
+/* END DEVO ONLY */
+
+/* TEXT STYLES */
+
+html{
+	font-size:16px;		/* 1 rem = 16px */	/* set in pixels so we can use rems */
+}
+
+body {
+	font-size: 100%;		/* percentage of size set on html tag */
+	font-family:"Open Sans", Tahoma, sans-serif;
+	line-height: 1.5;		/* use unit-less line height; write as a decimal. at least 1.3 */
+	color:#000000;
+}
+
+h1 {
+	font-family:"Open Sans Semibold", Tahoma, sans-serif;
+	font-weight:bold;		
+	color:#000000;	
+}
+
+h2, h3 {
+	font-family:"Open Sans Semibold", Tahoma, sans-serif;
+	font-weight:bold;		
+	color:#000000;	
+	padding:0.625em 0;	
+}
+
+/*small {
+	display:block;	
+}*/
+
+dd {
+	font-size:0.9em;
+}
+
+dt {
+	font-weight:bold;	
+}
+
+blockquote {
+	font-size:0.9em;
+}
+
+/* END TEXT STYLES */
+
+/* LINK STYLES */				/* LVHFA --> lORD vADER hATES fURRY aNIMALS*/
+
+a:link,
+a:visited {
+	color:#828282;
+	text-decoration:none;	
+}
+
+a:hover,
+a:focus {
+	color:#000000;
+	text-decoration:underline;	
+}
+
+.inline {						/*basic inline links*/
+	clear:right;
+	float:left;
+}
+
+.inspiration-list {				/*makes bullets disappear on "Inspirational Work" list on jewelry.php*/
+	list-style-type:none;	
+}
+
+.top-link {						/*back-to-top link; lives in footer.php*/
+	clear:left;
+	float:right;
+}
+
+/*SITEMAP*/
+
+#nav-sitemap ul {
+	margin:0;
+	padding:0;
+}
+
+#nav-sitemap li {
+	font-family:"Open Sans", "Open Sans Light", "Open Sans Semibold", Tahoma, sans-serif;
+	list-style-type:none;			/*removes bullets from list items*/
+	font-size:1.25em;
+	margin:0;
+	text-transform:uppercase;				
+}
+
+#nav-sitemap a {
+	display:block;
+	padding:0.625em 1.25em;
+	background-color:#FFFFFF;		/*white*/
+}
+
+#nav-sitemap a:link,
+#nav-sitemap a:visited {
+	color:#000000;			/*black*/	
+}
+
+#nav-sitemap a:hover,
+#nav-sitemap a:focus {		
+	color:#FFFFFF;			
+	background-color:#828282;		
+}
+
+/*END SITEMAP*/
+
+/* NAVIGATION */
+
+/* NAV-MAIN */
+
+#nav-main {
+	height:2.5em;
+}
+
+#nav-main ul {
+	margin:0;
+	padding:0;
+}
+
+#nav-main li {				/* This and the previous declaration will give the nav-main container an adequate height */
+	float:left;
+	line-height:2.5em;
+	width:25%;				/*This varies depending on how many nav items you have; in this case, 4*/
+	text-align:center;
+	list-style-type:none;	/*gets rid of the underlines so we can use them on hover state*/
+	margin-bottom:0;
+}
+
+#nav-main ul li ul.sub-menu {
+	display:none;	
+}
+
+#nav-main ul li.current-menu-item a {
+	color:#000000;			/*black*/	
+	background-color:#828282;		/*gray*/	
+}
+
+#nav-main a {
+	display:block;
+	border-right:1px solid;
+	color:#000000;			/*black*/
+	background-color:#FFFFFF;		/*white*/
+	text-transform:uppercase;
+}
+
+#nav-main a:link,
+#nav-main a:visited {
+	color:#000000;			/*black*/
+}
+
+#nav-main a:hover,
+#nav-main a:focus {		
+	color:#FFFFFF;			/*white*/	
+	background-color:#828282;		/*gray*/
+}
+
+#nav-main li:last-of-type a {		/*This removes the border-right on ONLY the last item in the nav*/
+	border:none;
+}
+
+/*#home a.home-link,
+#about a.about-link,
+#sitemap a.sitemap-link,
+#contact a.contact-link,
+#photography a.photography-link,
+#print a.print-link,
+#jewelry a.jewelry-link,
+#accessories a.accessories-link,
+#design a.design-link {
+	color:#000000;					black	
+	background-color:#828282;		gray
+}*/
+
+/*#home #nav-footer a.home-link,
+#about #nav-footer a.about-link,
+#sitemap #nav-footer a.sitemap-link,
+#contact #nav-footer a.contact-link {
+	color:#000000;					black
+	background-color:#FFFFFF;		white	
+}*/
+
+/* NAV-SUB */
+
+#nav-sub ul {
+	margin:0;
+	padding:0;
+}
+
+#nav-sub li {
+	font-family:"Open Sans", "Open Sans Light", "Open Sans Semibold", Tahoma, sans-serif;
+	list-style-type:none;			/*removes bullets from list items*/
+	margin:0;
+	border-bottom:1px solid #000000;		/*black*/
+	text-transform:uppercase;				
+}
+
+#nav-sub a {
+	display:block;
+	padding:0.625em 1.25em;
+	background-color:#FFFFFF;		/*white*/
+}
+
+#nav-sub a:link,
+#nav-sub a:visited {
+	color:#000000;			/*black*/	
+}
+
+#nav-sub a:hover,
+#nav-sub a:focus {		
+	color:#FFFFFF;			
+	background-color:#828282;		
+}
+
+/* NAV-SOCIAL */
+
+#nav-social {
+	float:right;					
+	width:176px;						/*32px*4-128+3*8=24 (gutters) = 152px total width*/
+	/*width:22%;*/			/*176px/820px header*/
+	clear:left;
+}
+
+#nav-social ul {
+	margin-left:0;
+}
+
+#nav-social li {
+	float:left;
+	width:32px;	
+	/*width:18.18181818181818%;*/							/*32px/176px container*/
+	text-align:right;					
+	margin-right:16px;
+	/*margin-right:1rem;*/
+	list-style-type:none;
+	margin-bottom:0;
+}
+
+#nav-social li.last {
+	margin-right:0;
+}
+
+#nav-social a:hover img,
+#nav-social a:focus img {		
+-moz-box-shadow:0 0 5px #EEE;
+-webkit-box-shadow:0 0 5px #EEE;
+box-shadow:0 0 5px #EEE;
+border-radius:50%;
+opacity: 0.7;
+filter: Alpha(opacity=70); /* fallback for IE8 and earlier; DOES NOT VALIDATE */
+}
+
+/* FOOTER */
+
+#nav-footer {
+	height:2em;
+}
+
+#nav-footer ul {
+	margin:0;
+	padding:0;
+}
+
+#nav-footer li {				/* This and the previous declaration will give the nav-main container an adequate height */
+	float:left;
+	line-height:2.5em;
+	width:25%;				/*This varies depending on how many nav items you have; in this case, 4*/
+	text-align:center;
+	list-style-type:none;	/*gets rid of the underlines so we can use them on hover state*/
+	margin-bottom:0;
+}
+
+#nav-footer a {
+	display:block;
+	color:#000000;			/*black*/
+	background-color:#828282;		/*white*/
+	text-transform:uppercase;
+}
+
+#nav-footer a:link,
+#nav-footer a:visited {
+	color:#FFFFFF;			/*black*/
+}
+
+#nav-footer a:hover,
+#nav-footer a:focus {		
+	color:#FFFFFF;			/*white*/	
+	background-color:#828282;		/*gray*/	
+	text-decoration:underline
+}
+
+/* RESPONSIVE TOGGLE NAV (MOBILE) - MENU */
+
+#nav-mobile {
+	padding: 20px;
+	padding: 1.25rem;	
+	background-color: #333;
+	color: #fff;
+}
+#nav-mobile ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#nav-mobile ul.expanded {
+    display: block;
+}
+
+#nav-mobile li a:link,
+#nav-mobile li a:visited {
+	display: block;
+	padding: 10px;
+	padding: 0.6250rem; 	
+	border-top: 1px solid #666;
+	color: #ddd;
+	text-decoration: none;
+}
+#nav-mobile li a:hover,
+#nav-mobile li a:focus {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.menu-button {
+	display: block;
+	text-align: right;
+	color: #ddd;
+	text-decoration: none;
+}
+.menu-button:hover,
+.menu-button:focus {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+/*END TOGGLE NAV (MOBILE)*/
+
+/* END NAV-FOOTER */
+
+/* END NAV-SOCIAL */
+
+/* END NAV-SUB */
+
+/* END NAV-MAIN */
+
+/* END NAVIGATION */
+
+/* END LINK STYLES */
+
+/* LAYOUT STYLES */
+
+#wrapper {
+	max-width:940px;		/* fallback */	
+	margin: 0 auto;			/* Centers the wrapper on page. Don't use margin-left/right. No need for rem calculation. */	
+}
+
+header {					
+	width:100%;				/*100% of wrapper*/
+	padding:20px 20px;
+	padding:1.25em 1.25rem;		
+	margin-bottom:.75em;	
+	overflow:hidden;
+}
+
+header h1 span {
+	display:none;
+}
+
+h1 {
+	width:200px;
+}
+
+h1, h2, h3, h4 {
+	margin-top:.75em;
+	margin-bottom:.25em;
+}
+
+#nav-main {
+	margin-bottom:.75em;		
+}
+
+#nav-sub {
+	margin-bottom:.75em;	
+}
+
+#middle {
+	margin-bottom:.75em;
+}
+
+section {
+	clear:both;
+	margin-bottom:.75em;
+	overflow:hidden;	
+}
+
+section.one-third {
+	clear:none;
+	margin-right: 20px;	
+}
+
+section.one-third:last-child {
+	margin:0;	
+}
+
+.upper-right {					/*this is applied to ONLY the small upper-right images on Photography to give padding above lower pics*/
+	margin-bottom:2em;
+}
+
+.left {
+	float:left;
+}
+
+.right {
+	float:right;
+}
+
+.one-third {
+	width:300px;			/* fallback */
+	width:31.91489361702128%;			/* 300/940 */
+}
+
+.two-thirds {
+	width:620px;					/* fallback */
+	width:65.95744680851064%;		/* 620/940 */	
+}
+
+.one-half {
+	width:460px;			/* fallback */
+	width:48.93617021276596%;		/* 460/940 */
+}
+
+blockquote {
+	display:block;
+	margin:1.25em 1.25rem;
+	padding:1.25em 1.25rem;
+	border-top:thick solid #FB0753;
+	border-bottom:thick solid #FB0753;	
+}
+
+/*ul, ol, dl {
+	margin-left:32px;
+	margin-left:2em;
+}*/
+
+p, ul, ol, dl {
+	margin-bottom:.75em;
+}
+
+dd {
+	margin-left:20px;
+	margin-left:1.25em;
+}
+
+li, dd {
+	margin-bottom:.25em;
+}
+
+footer {
+	background-color:#828282;
+	color:#FFFFFF;		
+	clear:both;
+	padding:20px 20px;			 /*fallback*/ 		
+	padding:1.25em 1.25rem;		 /*20px/16px*/ 			
+	max-width:100%;		/* full width of wrapper */
+	overflow:hidden;			
+}
+
+.credits {
+	font-size:0.8em;
+	line-height:2.5em;
+	text-align:center	
+}
+
+/* END LAYOUT STYLES */
+
+/* FORM STYLES */
+
+form p {
+	margin:1.25em 0;
+}
+
+label {
+	display:block;
+}
+
+fieldset {
+	padding:12px;	/* fallback */
+	padding:0.75em 0.75rem;		/* 16/12 */
+}
+
+legend {
+	padding:.5em;
+}
+
+form p {
+	margin-bottom:1.25em;
+}
+
+label {
+	display:block;
+}
+
+input [type="text"], input [type="email"] {
+	display:block;
+	width:100%;
+	margin-bottom:1.25em;
+	padding:.25em;
+	height:2em;	
+}
+
+input [type="checkbox"] {
+	margin:.25em .25em .25em 0;
+	height:1.28em;
+}
+
+textarea {
+	width:100%;
+	padding:.25em;	
+}
+
+select {
+	font-size:1em;
+}
+
+p.button input {
+	float:right;
+	margin:1em 0 1em 1em;
+}
+
+/* END FORM STYLES */
+
+	/*IMAGES*/
+
+header {
+	background-image:url(images/MistyTreesPhotoLapush.jpg);
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-attachment:scroll;
+	background-position:center;
+	min-height:18em;
+}
+
+#logo {
+	margin:auto 40px;		/*fallback*/				
+	margin:auto 2.5rem;							
+}
+	
+img,
+embed,
+object,
+video,
+iframe,
+.wp-caption {			/*wp-caption for flexible images in WordPress*/
+	max-width:100%;		/*never exceed width of parent element*/
+}
+
+/*img.small {
+	width:30.43478260869565%;	percentage of containing element -- in this case, content div which is 460 -> 140/460px
+}*/
+
+/*img.medium {
+	width:65.21739%;	percentage of containing element -- in this case, content div which is 460 -> 300/460px
+}*/
+
+/*img.large {
+	width:100%;			100% of container --> content div --> 460px
+}*/
+
+/*img.align-a {
+	float:left;
+	margin:.25em 20px .25em 0;		fallback
+	margin:.25em 1.25rem .25em 0;
+}
+
+img.align-b {
+	float:right;
+	margin:.25em 0 .25em 20px;		fallback
+	margin:.25em 0 .25em 1.25rem;
+}
+
+.clear {
+	clear:both;
+}*/
+
+	/*END IMAGES*/
+	
+	/*MEDIA QUERIES*/
+
+@media all AND (max-width: 900px){
+	body {
+		font-family:"Open Sans Light", "Open Sans Semibold", Tahoma, sans-serif;
+		font-size:0.9em;
+	}
+}
+
+@media all AND (min-width: 768px){
+	#nav-mobile {
+		display:none;
+	}
+	#nav-main {
+		display:block;
+	}
+
+}
+
+@media all AND (max-width: 768px){
+/*	body {
+		font-family:"Open Sans Light", "Open Sans Semibold", Tahoma, sans-serif;
+		font-size:0.9em;
+	}*/
+
+	#nav-social {
+		float:left;
+	}
+	
+	#logo {
+		float:left;
+		margin:auto 0;
+	}
+
+	#nav-mobile {
+		display:block;
+	}
+	#nav-main {
+		display:none;
+	}
+
+}
+
+@media all AND (max-width: 500px){
+
+	.one-third {
+		width:100%;
+	}
+	
+	.two-thirds {
+		width:100%;
+	}
+	
+	.one-half {
+		width:100%;
+	}
+
+	#nav-footer li {
+		width:100%;
+	}
+
+}
+	
+	/*END MEDIA QUERIES*/	
+
+img.wp-post-image {}
+
+img.attachment-thumbnail {
+		float:left;
+		margin:4px 20px 0 0;
+	}
+
+img.attachment-medium {}
+
+img.attachment-large {}
+
+img.attachment-full {}
+
+
+#content article.post-excerpt {
+overflow: hidden;
+margin-bottom: 20px;
+}
+	
+	/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
